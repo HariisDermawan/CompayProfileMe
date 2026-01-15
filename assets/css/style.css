@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&family=Share+Tech+Mono&display=swap');
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #00f3ff, #9d00ff);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #00f3ff, #ff00ff);
+}
+
+::selection {
+    background: rgba(0, 243, 255, 0.3);
+    color: white;
+}
+
+* {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-spin-slow {
+    animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.circuit-border {
+    position: relative;
+    overflow: hidden;
+}
+
+.circuit-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 50%, rgba(0, 243, 255, 0.1) 50%);
+    background-size: 10px 10px;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    padding: 1px;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.cyber-glow {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+}
+
+.matrix-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 90%, rgba(0, 243, 255, 0.05) 90%);
+    background-size: 100% 4px;
+    animation: matrixFall 10s linear infinite;
+    pointer-events: none;
+    opacity: 0.1;
+}
+
+.terminal-cursor::after {
+    content: '|';
+    animation: terminalBlink 1s step-end infinite;
+}
+
+.cyber-grid-overlay {
+    background-image:
+        linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.neon-border-animate {
+    animation: neonBorder 2s ease-in-out infinite alternate;
+}
+
+.particle-spark {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #00f3ff;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particleSpark 2s ease-out infinite;
+}
+
+.cyber-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #00f3ff, transparent);
+    animation: cyberWave 4s linear infinite;
+}
+
+.glitch-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.glitch-effect::before,
+.glitch-effect::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch-effect::before {
+    left: 2px;
+    text-shadow: -1px 0 #ff00ff;
+    animation: glitch 0.3s infinite;
+}
+
+.glitch-effect::after {
+    left: -2px;
+    text-shadow: 1px 0 #00f3ff;
+    animation: glitch 0.3s infinite reverse;
+}
+
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.transform-3d {
+    transform-style: preserve-3d;
+}
+
+.glass-effect {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.neon-button {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.neon-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.neon-button:hover::before {
+    left: 100%;
+}
+
+.binary-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.binary-digit {
+    position: absolute;
+    color: #00f3ff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    opacity: 0.7;
+    animation: matrixFall linear infinite;
+}
